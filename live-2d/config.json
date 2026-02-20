@@ -47,9 +47,9 @@
     "auto_screenshot": false,
     "use_vision_model": true,
     "vision_model": {
-      "api_key": "AIzaSyAcbuXFpSrVtWRHK7cnUgZlmuzOkFgSPNU",
-      "api_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "model": "gemini-2.0-flash"
+      "api_key": "sk-duvltcltzadmxgbapbesbegkuurmsdkjfsukfnbzkttujdva",
+      "api_url": "https://api.siliconflow.cn/v1",
+      "model": "Qwen/Qwen2.5-VL-72B-Instruct"
     }
   },
   "translation": {
@@ -78,7 +78,7 @@
       "model": "FunAudioLLM/CosyVoice2-0.5B",
       "voice": "speech:fake-neuro:j3qz9ij4k2:kquiiycgizgaoxeujypx",
       "response_format": "wav",
-      "speed": 1.0
+      "speed": 1
     },
     "baidu_asr": {
       "enabled": false,
@@ -103,8 +103,8 @@
     "text_only_mode": false,
     "auto_show_chat_on_text_mode": true,
     "model_position": {
-      "x": 1.6756882190039464,
-      "y": 0.9823272094120075,
+      "x": 1.6214626527026044,
+      "y": 1.028750062463968,
       "remember_position": true
     }
   },
