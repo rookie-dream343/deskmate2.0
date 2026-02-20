@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell:*)",
+      "Bash(python:*)",
+      "Bash(where:*)",
+      "Bash(dir:*)",
+      "mcp__web-reader__webReader",
+      "Bash(findstr:*)",
+      "mcp__web-search-prime__webSearchPrime",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

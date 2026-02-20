@@ -1,0 +1,520 @@
+{
+  "total_lines": 492,
+  "user_messages": [
+    {
+      "index": 1,
+      "content": "参考这个github开源项目https://github.com/morettt/my-neuro，我已经将其下载下来就是当前所处的这个文件夹内。http://mynewbot.com/tutorials/local这个是该项目本地部署的指南网站，我目前已经做了这些操作(base) D:\\deskmate\\deskmate\\my-neuro-main>conda create -n my-neuro python=3.11 -y\n3 channel Terms of Service accepted\nRetrieving notices: done\nChannels:\n - defaults\nPlatform: win-64\nCollecting package metadata (repodata.json): done\nSolving environment: done\n\n\n==> WARNING: A newer version of conda exists. <==\n    current version: 26.1.0\n    latest version: 26.1.1\n\nPlease update conda by running\n\n    $ conda update -n base -c defaults conda\n\n\n\n## Package Plan ##\n\n  environment location: D:\\conda\\envs\\my-neuro\n\n  added / updated specs:\n    - python=3.11\n\n\nThe following packages will be downloaded:\n\n    package                    |            build\n    ---------------------------|-----------------\n    pip-26.0.1                 |     pyhc872135_0         1.1 MB\n    ------------------------------------------------------------\n                                           Total:         1.1 MB\n\nThe following NEW packages will be INSTALLED:\ndone\n#\n# To activate this environment, use\n#\n#     $ conda activate my-neuro\n#\n# To deactivate an active environment, use\n#\n#     $ conda deactivate\n\n\n(base) D:\\deskmate\\deskmate\\my-neuro-main>conda activate my-neuro\n\n(my-neuro) D:\\deskmate\\deskmate\\my-neuro-main>pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128\nLooking in indexes: https://download.pytorch.org/whl/cu128\nCollecting torch\n  Using cached https://download.pytorch.org/whl/cu128/torch-2.10.0%2Bcu128-cp311-cp311-win_amd64.whl.metadata (29 kB)\nCollecting torchvision\n  Using cached https://download.pytorch.org/whl/cu128/torchvision-0.25.0%2Bcu128-cp311-cp311-win_amd64.whl.metadata (5.5 kB)\nCollecting torchaudio\n  Using cached https://download.pytorch.org/whl/cu128/torchaudio-2.10.0%2Bcu128-cp311-cp311-win_amd64.whl.metadata (7.1 kB)\nCollecting filelock (from torch)\n  Using cached filelock-3.20.0-py3-none-any"
+    },
+    {
+      "index": 2,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 3,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 4,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 5,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 6,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 7,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 8,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 9,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 10,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 11,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 12,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 13,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 14,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 15,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 16,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 17,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 18,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 19,
+      "content": "你帮我启动下试试看呢"
+    },
+    {
+      "index": 20,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 21,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 22,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 23,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 24,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 25,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 26,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 27,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 28,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 29,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 30,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 31,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 32,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 33,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 34,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 35,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 36,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 37,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 38,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 39,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 40,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 41,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 42,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 43,
+      "content": "<task-notification>\n<task-id>b399915</task-id>\n<output-file>C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b399915.output</output-file>\n<status>failed</status>\n<summary>Background command \"Start ASR service in background\" failed with exit code 127</summary>\n</task-notification>\nRead the output file to retrieve the result: C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b399915.output"
+    },
+    {
+      "index": 44,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 45,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 46,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 47,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 48,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 49,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 50,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 51,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 52,
+      "content": "<task-notification>\n<task-id>b0d47ce</task-id>\n<output-file>C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b0d47ce.output</output-file>\n<status>failed</status>\n<summary>Background command \"Start TTS service in background\" failed with exit code 127</summary>\n</task-notification>\nRead the output file to retrieve the result: C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b0d47ce.output"
+    },
+    {
+      "index": 53,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 54,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 55,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 56,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 57,
+      "content": "<task-notification>\n<task-id>baa0835</task-id>\n<output-file>C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\baa0835.output</output-file>\n<status>failed</status>\n<summary>Background command \"Start BERT service in background\" failed with exit code 127</summary>\n</task-notification>\nRead the output file to retrieve the result: C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\baa0835.output"
+    },
+    {
+      "index": 58,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 59,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 60,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 61,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 62,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 63,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 64,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 65,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 66,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 67,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 68,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 69,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 70,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 71,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 72,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 73,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 74,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 75,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 76,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 77,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 78,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 79,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 80,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 81,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 82,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 83,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 84,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 85,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 86,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 87,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 88,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 89,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 90,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 91,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 92,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 93,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 94,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 95,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 96,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 97,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 98,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 99,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 100,
+      "content": "<task-notification>\n<task-id>b608745</task-id>\n<output-file>C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b608745.output</output-file>\n<status>completed</status>\n<summary>Background command \"Start ASR service with cmd\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b608745.output"
+    },
+    {
+      "index": 101,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 102,
+      "type": "tool_result",
+      "count": 1
+    },
+    {
+      "index": 103,
+      "content": "<task-notification>\n<task-id>b5fdd9a</task-id>\n<output-file>C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b5fdd9a.output</output-file>\n<status>completed</status>\n<summary>Background command \"Start TTS service with cmd\" completed (exit code 0)</summary>\n</task-notification>\nRead the output file to retrieve the result: C:\\Users\\Zamateur\\AppData\\Local\\Temp\\claude\\D--deskmate-deskmate-my-neuro-main\\tasks\\b5fdd9a.output"
+    },
+    {
+      "index": 104,
+      "type": "tool_result",
+      "count": 1
+    }
+  ],
+  "assistant_messages_summaries": [],
+  "errors": []
+}
