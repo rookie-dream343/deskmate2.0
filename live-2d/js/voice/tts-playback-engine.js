@@ -122,13 +122,14 @@ class TTSPlaybackEngine {
                                 );
                             }
 
+                            // 🔥 逐字显示字幕已禁用（对话历史面板已存在）
                             // 显示字幕
-                            const currentDisplay = this.displayedText + processedText.substring(0, charDisplayIndex);
-                            if (typeof showSubtitle === 'function') {
-                                showSubtitle(`${this.config.subtitle_labels?.ai || 'Fake Neuro'}: ${currentDisplay}`);
-                                const container = document.getElementById('subtitle-container');
-                                if (container) container.scrollTop = container.scrollHeight;
-                            }
+                            // const currentDisplay = this.displayedText + processedText.substring(0, charDisplayIndex);
+                            // if (typeof showSubtitle === 'function') {
+                            //     showSubtitle(`${this.config.subtitle_labels?.ai || 'Fake Neuro'}: ${currentDisplay}`);
+                            //     const container = document.getElementById('subtitle-container');
+                            //     if (container) container.scrollTop = container.scrollHeight;
+                            // }
 
                             lastUpdateTime = currentTime;
                         }
@@ -205,9 +206,10 @@ class TTSPlaybackEngine {
 
                 // 更新显示文本
                 this.displayedText += processedText;
-                if (typeof showSubtitle === 'function') {
-                    showSubtitle(`${this.config.subtitle_labels?.ai || 'Fake Neuro'}: ${this.displayedText}`);
-                }
+                // 🔥 最终字幕已禁用（对话历史面板已存在）
+                // if (typeof showSubtitle === 'function') {
+                //     showSubtitle(`${this.config.subtitle_labels?.ai || 'Fake Neuro'}: ${this.displayedText}`);
+                // }
 
                 this.cleanup();
                 this.isPlaying = false;
