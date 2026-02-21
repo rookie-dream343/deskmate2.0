@@ -57,13 +57,16 @@
             const btn = document.getElementById('history-toggle-btn');
 
             historyVisible = !historyVisible;
+            console.log('toggleHistory new state:', historyVisible);
 
             if (historyVisible) {
-                content.style.display = 'flex';
+                content.style.setProperty('display', 'flex', 'important');
                 btn.classList.add('active');
+                console.log('Showing content');
             } else {
-                content.style.display = 'none';
+                content.style.setProperty('display', 'none', 'important');
                 btn.classList.remove('active');
+                console.log('Hiding content');
             }
         }
 
@@ -78,6 +81,7 @@
         // 确保按钮默认是 active 状态
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('history-toggle-btn').classList.add('active');
+            console.log('DOM loaded, history initialized');
         });
     </script>
 
