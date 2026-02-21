@@ -59,13 +59,19 @@ class ConversationHistory {
             return;
         }
 
+        // 🔥 移除所有旧的监听器（防止重复绑定）
+        const newBtn = this.toggleBtn.cloneNode(true);
+        this.toggleBtn.parentNode.replaceChild(newBtn, this.toggleBtn);
+        this.toggleBtn = newBtn;
+
         // 绑定切换按钮事件
         this.toggleBtn.addEventListener('click', (e) => {
             console.log('[ConversationHistory] 按钮被点击');
             e.preventDefault();
             e.stopPropagation();
+            e.stopImmediatePropagation();
             this.toggle();
-        });
+        }, true);  // 使用捕获阶段，确保优先执行
 
         // 绑定清空按钮事件
         if (this.clearBtn) {
@@ -75,6 +81,10 @@ class ConversationHistory {
                 this.clear();
             });
         }
+
+        // 🔥 设置初始状态为显示
+        this.isVisible = true;
+        this.toggleBtn.classList.add('active');
 
         console.log('[ConversationHistory] 对话历史模块已初始化');
     }
@@ -87,13 +97,14 @@ class ConversationHistory {
         this.isVisible = !this.isVisible;
 
         if (this.isVisible) {
-            this.contentBox.classList.add('visible');
+            // 直接设置样式，不依赖 CSS 类
+            this.contentBox.style.display = 'flex';
             this.toggleBtn.classList.add('active');
             // 滚动到底部显示最新消息
             this.scrollToBottom();
             console.log('[ConversationHistory] 显示历史记录');
         } else {
-            this.contentBox.classList.remove('visible');
+            this.contentBox.style.display = 'none';
             this.toggleBtn.classList.remove('active');
             console.log('[ConversationHistory] 隐藏历史记录');
         }
