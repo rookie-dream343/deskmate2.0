@@ -27,12 +27,11 @@ class UIController {
         const updateMouseIgnore = () => {
             if (!global.currentModel) return;
 
+            const mousePos = global.pixiApp.renderer.plugins.interaction.mouse.global;
+
             // 🔥 检查鼠标是否在可交互元素上（聊天框、历史记录容器等）
             const chatContainer = document.getElementById('text-chat-container');
             const historyContainer = document.getElementById('history-container');
-            const chatInput = document.getElementById('chat-input');
-
-            const mousePos = global.pixiApp.renderer.plugins.interaction.mouse.global;
 
             // 检查是否在聊天框区域
             let isInInteractiveArea = false;
@@ -54,7 +53,10 @@ class UIController {
             // 检查是否在 Live2D 模型上
             const isInModel = global.currentModel.containsPoint(mousePos);
 
-            // 只有在模型上且不在可交互区域时才穿透
+            // 🔥 正确逻辑：
+            // - 在模型上 且 不在可交互区域 -> 穿透（ignore=true）
+            // - 在可交互区域 -> 不穿透（ignore=false）
+            // - 不在模型上 -> 不穿透（ignore=false），让用户操作其他程序
             const shouldIgnore = isInModel && !isInInteractiveArea;
 
             ipcRenderer.send('set-ignore-mouse-events', {
