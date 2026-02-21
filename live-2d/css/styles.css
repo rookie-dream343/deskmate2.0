@@ -36,12 +36,12 @@ body {
 
 #subtitle-text {
     color: white;
-    font-size: 30px;
+    font-size: 18px;
     margin: 0;
     font-family: 'Patrick Hand', 'ZCOOL QingKe HuangYou', sans-serif;
     line-height: 1.5;
     font-weight: 900;
-    text-shadow: 
+    text-shadow:
           -0.5px -0.5px 0 black,
           0.5px -0.5px 0 black,
           -0.5px 0.5px 0 black,
@@ -52,8 +52,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 350px;
-    max-height: 400px;
+    width: 280px;
+    max-height: 300px;
     z-index: 1000;
     display: none;
     pointer-events: auto;
@@ -61,11 +61,12 @@ body {
 
 #chat-messages {
     display: none;
-    max-height: 300px;
+    max-height: 200px;
     overflow-y: auto;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: white;
     font-family: 'Patrick Hand', sans-serif;
+    font-size: 13px;
 }
 
 #chat-input-container {
@@ -114,10 +115,10 @@ body {
 
 #text-chat-container[data-style="1"] #chat-input,
 #text-chat-container:not([data-style]) #chat-input {
-    padding: 12px 20px;
+    padding: 10px 15px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.9);
-    font-size: 15px;
+    font-size: 13px;
     color: #333;
 }
 
@@ -134,11 +135,11 @@ body {
 
 #text-chat-container[data-style="1"] #chat-send-btn,
 #text-chat-container:not([data-style]) #chat-send-btn {
-    padding: 12px 28px;
+    padding: 10px 20px;
     border-radius: 18px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }

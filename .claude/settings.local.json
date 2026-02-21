@@ -9,7 +9,9 @@
       "Bash(findstr:*)",
       "mcp__web-search-prime__webSearchPrime",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(\"D:\\\\conda\\\\envs\\\\my-neuro\\\\python.exe\":*)",
+      "Bash(git push:*)"
     ]
   }
 }

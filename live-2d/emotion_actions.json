@@ -9,7 +9,8 @@
         "motions/Hiyori_m09.motion3.json"
       ],
       "难过": [
-        "motions/Hiyori_m04.motion3.json"
+        "motions/Hiyori_m04.motion3.json",
+        "motions/Hiyori_m10.motion3.json"
       ],
       "惊讶": [],
       "害羞": [
@@ -22,9 +23,6 @@
       ],
       "动作1": [
         "motions/Hiyori_m01.motion3.json"
-      ],
-      "动作10": [
-        "motions/Hiyori_m10.motion3.json"
       ],
       "动作11": [
         "motions/micoff.motion3.json"
