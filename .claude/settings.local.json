@@ -11,7 +11,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(\"D:\\\\conda\\\\envs\\\\my-neuro\\\\python.exe\":*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git revert:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }

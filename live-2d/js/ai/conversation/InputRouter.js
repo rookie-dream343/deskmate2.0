@@ -118,9 +118,9 @@ class InputRouter {
         // 显示用户消息
         this.addChatMessage('user', text);
 
-        // 🔥 添加到对话历史记录
-        if (global.conversationHistory) {
-            global.conversationHistory.addUserMessage(text);
+        // 🔥 添加到对话历史记录（使用全局函数）
+        if (typeof window.addUserMessage === 'function') {
+            window.addUserMessage(text);
         }
 
         // 🔥 新增：调用 MemOS 记忆检索并注入

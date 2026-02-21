@@ -80,13 +80,6 @@ app.whenReady().then(() => {
 
     const mainWindow = createWindow();
 
-    // 🔥 添加快捷键打开开发者工具 (Ctrl+Shift+D)
-    globalShortcut.register('CommandOrControl+Shift+D', () => {
-        if (mainWindow) {
-            mainWindow.webContents.toggleDevTools();
-        }
-    });
-
     // 启动 HTTP API 服务器
     const httpServer = new HttpServer();
     httpServer.start();

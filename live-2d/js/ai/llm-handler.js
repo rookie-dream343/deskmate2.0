@@ -654,7 +654,10 @@ class LLMHandler {
 
                     // 🔥 添加到对话历史记录（UI显示）
                     if (global.conversationHistory) {
-                        global.conversationHistory.addAIMessage(finalResponseContent);
+                        // 🔥 添加到对话历史记录（使用全局函数）
+                        if (typeof window.addAIMessage === 'function') {
+                            window.addAIMessage(finalResponseContent);
+                        }
                     }
 
                     // ===== MemOS: 异步保存对话到记忆系统 =====
