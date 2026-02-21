@@ -100,6 +100,22 @@ class LLMHandler {
                         try {
                             console.log("需要截图");
                             logToTerminal('info', "需要截图");
+
+                            // 🔥 立即显示反馈消息，让用户知道正在处理视觉内容
+                            const aiName = config.subtitle_labels?.ai || 'Haruro';
+                            const thinkingMessages = [
+                                "让我看看...",
+                                 "我看看屏幕~",
+                                 "正在看...",
+                                 "等我看一下哦",
+                                 "让我仔细看看",
+                                 "我看看这是什么"
+                            ];
+                            const randomMessage = thinkingMessages[Math.floor(Math.random() * thinkingMessages.length)];
+                            if (typeof showSubtitle === 'function') {
+                                showSubtitle(`${aiName}: ${randomMessage}`);
+                            }
+
                             screenshotBase64 = await voiceChat.takeScreenshotBase64();
                         } catch (error) {
                             console.error("截图处理失败:", error);
