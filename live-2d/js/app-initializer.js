@@ -159,6 +159,12 @@ class AppInitializer {
         console.log('📜 初始化对话历史记录...');
         this.conversationHistory = new ConversationHistory(this.config);
 
+        // 🔥 设置对话历史面板的角色名称
+        if (typeof window !== 'undefined' && window.roleNames) {
+            window.roleNames.user = this.config.subtitle_labels?.user || '管理员';
+            window.roleNames.ai = this.config.subtitle_labels?.ai || '小歪';
+        }
+
         // 为EnhancedTextProcessor提供全局字幕函数
         global.showSubtitle = (text, duration) => this.uiController.showSubtitle(text, duration);
         global.hideSubtitle = () => this.uiController.hideSubtitle();

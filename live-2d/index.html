@@ -56,6 +56,12 @@
         window.chatHistory = [];
         let isHistoryVisible = false;
 
+        // 角色名称（从配置中读取，这里设为默认值，会被app.js覆盖）
+        window.roleNames = {
+            user: '管理员',
+            ai: '小歪'
+        };
+
         // 切换显示/隐藏
         function toggleChatHistory() {
             const panel = document.getElementById('chat-history-panel');
@@ -93,9 +99,9 @@
             const time = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
 
             if (type === 'user') {
-                item.innerHTML = `<span class="chat-time">${time}</span><span class="chat-sender user">你:</span><span class="chat-text">${text}</span>`;
+                item.innerHTML = `<span class="chat-time">${time}</span><span class="chat-sender user">${window.roleNames.user}:</span><span class="chat-text">${text}</span>`;
             } else {
-                item.innerHTML = `<span class="chat-time">${time}</span><span class="chat-sender ai">AI:</span><span class="chat-text">${text}</span>`;
+                item.innerHTML = `<span class="chat-time">${time}</span><span class="chat-sender ai">${window.roleNames.ai}:</span><span class="chat-text">${text}</span>`;
             }
 
             list.appendChild(item);

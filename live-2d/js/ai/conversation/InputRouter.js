@@ -69,9 +69,9 @@ class InputRouter {
             this.barrageManager.clearNormalQueue();
         }
 
-        // 🔥 添加到对话历史记录
-        if (global.conversationHistory) {
-            global.conversationHistory.addUserMessage(text);
+        // 🔥 添加到对话历史记录（使用HTML中的全局函数）
+        if (typeof window.addUserMessage === 'function') {
+            window.addUserMessage(text);
         }
 
         // 检查游戏模式
