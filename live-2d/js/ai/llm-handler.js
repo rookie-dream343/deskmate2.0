@@ -93,7 +93,34 @@ class LLMHandler {
 
                 // 检查是否需要截图（只在第一次尝试且未重试过时）
                 let screenshotBase64 = null;
-                if (isFirstAttempt && !hasRetriedWithoutImage) {
+                let screenshotFilename = null;
+
+                // 🔥 优先检查是否有拖拽的图片（pendingScreenshot）
+                if (isFirstAttempt && !hasRetriedWithoutImage && voiceChat.pendingScreenshot) {
+                    screenshotBase64 = voiceChat.pendingScreenshot.base64;
+                    screenshotFilename = voiceChat.pendingScreenshot.filename || '拖拽的图片';
+                    console.log(`📸 使用拖拽的图片: ${screenshotFilename}`);
+                    logToTerminal('info', `📸 使用拖拽的图片: ${screenshotFilename}`);
+
+                    // 播放即时反馈
+                    const thinkingMessages = [
+                        "让我看看",
+                        "我看看",
+                        "正在看",
+                        "等我看一下哦",
+                        "让我仔细看看",
+                        "我看看这是什么"
+                    ];
+                    const randomMessage = thinkingMessages[Math.floor(Math.random() * thinkingMessages.length)];
+                    voiceChat.playImmediateFeedback(randomMessage).catch(err => {
+                        console.warn('即时反馈播放失败:', err);
+                    });
+
+                    // 清除pendingScreenshot，避免重复使用
+                    voiceChat.pendingScreenshot = null;
+                }
+                // 如果没有拖拽图片，检查是否需要截图
+                else if (isFirstAttempt && !hasRetriedWithoutImage) {
                     const needScreenshot = await voiceChat.shouldTakeScreenshot(prompt);
 
                     if (needScreenshot) {

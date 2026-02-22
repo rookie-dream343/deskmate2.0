@@ -344,6 +344,210 @@ class ModelInteractionController {
         this.model.on('rightdown', (e) => {
             e.stopPropagation();
         });
+
+        // ========== 文件拖拽功能 ==========
+        this.setupFileDrop();
+    }
+
+    // 设置文件拖拽
+    setupFileDrop() {
+        // 阻止默认拖拽行为
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            document.body.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+        });
+
+        // 拖拽进入时的视觉反馈
+        document.addEventListener('dragenter', (e) => {
+            if (this.isFileDrag(e)) {
+                this.showDragHighlight(true);
+            }
+        });
+
+        // 拖拽离开时移除视觉反馈
+        document.addEventListener('dragleave', (e) => {
+            if (e.clientX === 0 && e.clientY === 0) {
+                this.showDragHighlight(false);
+            }
+        });
+
+        // 拖拽结束时移除视觉反馈
+        document.addEventListener('dragend', (e) => {
+            this.showDragHighlight(false);
+        });
+
+        // 拖拽释放时处理文件
+        document.addEventListener('drop', (e) => {
+            this.showDragHighlight(false);
+
+            // 检查是否拖拽到模型上
+            const point = global.pixiApp.renderer.plugins.interaction.mouse.global;
+            const isOnModel = this.model.containsPoint(point);
+
+            if (!isOnModel) return;
+
+            const files = e.dataTransfer.files;
+            if (files.length === 0) return;
+
+            this.handleDroppedFiles(files);
+        });
+    }
+
+    // 检查是否是文件拖拽
+    isFileDrag(e) {
+        return e.dataTransfer && e.dataTransfer.types && e.dataTransfer.types.includes('Files');
+    }
+
+    // 显示/隐藏拖拽高亮效果
+    showDragHighlight(show) {
+        if (!global.pixiApp || !global.pixiApp.view) return;
+
+        if (show) {
+            global.pixiApp.view.style.filter = 'brightness(1.2) drop-shadow(0 0 20px rgba(102, 126, 234, 0.8))';
+            global.pixiApp.view.style.cursor = 'copy';
+        } else {
+            global.pixiApp.view.style.filter = '';
+            global.pixiApp.view.style.cursor = '';
+        }
+    }
+
+    // 处理拖放的文件
+    async handleDroppedFiles(files) {
+        const file = files[0];  // 只处理第一个文件
+
+        // 读取文件内容
+        const reader = new FileReader();
+
+        reader.onload = async (e) => {
+            const content = e.target.result;
+
+            if (this.isImageFile(file)) {
+                // 图片文件 - 发送给AI点评
+                await this.handleImageDrop(file, content);
+            } else if (this.isTextFile(file)) {
+                // 文本文件 - 发送给AI总结
+                await this.handleTextDrop(file, content);
+            } else {
+                // 其他文件类型
+                this.showUnsupportedMessage(file);
+            }
+        };
+
+        if (this.isImageFile(file)) {
+            reader.readAsDataURL(file);
+        } else {
+            reader.readAsText(file);
+        }
+    }
+
+    // 判断是否是图片文件
+    isImageFile(file) {
+        return file.type.startsWith('image/');
+    }
+
+    // 判断是否是文本文件
+    isTextFile(file) {
+        const textTypes = ['text/plain', 'text/html', 'text/css', 'text/javascript',
+                           'application/json', 'application/xml', 'text/markdown',
+                           'text/csv', 'text/x-python-script'];
+        return textTypes.includes(file.type) ||
+               file.name.endsWith('.txt') ||
+               file.name.endsWith('.md') ||
+               file.name.endsWith('.json') ||
+               file.name.endsWith('.js') ||
+               file.name.endsWith('.py') ||
+               file.name.endsWith('.css') ||
+               file.name.endsWith('.html');
+    }
+
+    // 处理图片拖放 - AI点评
+    async handleImageDrop(file, base64Content) {
+        console.log('检测到图片文件:', file.name);
+
+        // 提取base64数据（去掉data:image/xxx;base64,前缀）
+        const base64Data = base64Content.split(',')[1];
+
+        // 构建消息
+        const prompt = `这是我拖给你的图片，请点评一下这张图片。`;
+
+        // 添加用户消息到对话历史
+        if (typeof window.addUserMessage === 'function') {
+            window.addUserMessage(`[发送图片: ${file.name}]`);
+        }
+
+        // 显示提示
+        if (global.showBubble) {
+            global.showBubble();
+        }
+
+        try {
+            // 调用 LLMHandler 的 sendToLLM，传入截图数据
+            if (global.voiceChat && global.voiceChat.sendToLLM) {
+                // 设置截图数据
+                global.voiceChat.pendingScreenshot = {
+                    base64: base64Data,
+                    filename: file.name
+                };
+
+                // 发送给LLM处理
+                await global.voiceChat.sendToLLM(prompt);
+
+                // 清除截图数据
+                global.voiceChat.pendingScreenshot = null;
+            }
+        } catch (error) {
+            console.error('处理图片失败:', error);
+            if (typeof window.addAIMessage === 'function') {
+                window.addAIMessage('（抱歉，处理图片时出错了）');
+            }
+        }
+    }
+
+    // 处理文本文件拖放 - AI总结
+    async handleTextDrop(file, textContent) {
+        console.log('检测到文本文件:', file.name);
+        console.log('文件内容长度:', textContent.length);
+
+        // 添加用户消息到对话历史
+        if (typeof window.addUserMessage === 'function') {
+            window.addUserMessage(`[发送文件: ${file.name}，请总结]`);
+        }
+
+        // 限制内容长度（避免token过多）
+        const maxLength = 10000;
+        let truncatedContent = textContent;
+        if (textContent.length > maxLength) {
+            truncatedContent = textContent.substring(0, maxLength) + '\n...（内容已截断）';
+        }
+
+        // 显示提示
+        if (typeof window.addAIMessage === 'function') {
+            window.addAIMessage(`（收到文件 ${file.name}，正在总结...）`);
+        }
+
+        const prompt = `这是我拖给你的文本文件"${file.name}"，请帮我总结一下主要内容：\n\n${truncatedContent}`;
+
+        try {
+            if (global.voiceChat && global.voiceChat.sendToLLM) {
+                await global.voiceChat.sendToLLM(prompt);
+            }
+        } catch (error) {
+            console.error('处理文本文件失败:', error);
+            if (typeof window.addAIMessage === 'function') {
+                window.addAIMessage('（抱歉，处理文件时出错了）');
+            }
+        }
+    }
+
+    // 显示不支持的文件类型消息
+    showUnsupportedMessage(file) {
+        console.log('不支持的文件类型:', file.type, file.name);
+
+        if (typeof window.addAIMessage === 'function') {
+            window.addAIMessage(`（抱歉，我不支持处理 ${file.name} 这种类型的文件。目前支持图片和文本文件。）`);
+        }
     }
 
 
