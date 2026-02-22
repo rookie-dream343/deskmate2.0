@@ -11,8 +11,10 @@ class ModelInteractionController {
         this.interactionY = 0;
         this.isDragging = false;
         this.isDraggingChat = false;
+        this.isDraggingHistory = false;  // 新增：对话历史面板拖动状态
         this.dragOffset = { x: 0, y: 0 };
         this.chatDragOffset = { x: 0, y: 0 };
+        this.historyDragOffset = { x: 0, y: 0 };  // 新增：对话历史面板拖动偏移
         this.config = null;
     }
 
@@ -178,10 +180,22 @@ class ModelInteractionController {
 
         // 鼠标移动时更新位置
         document.addEventListener('mousemove', (e) => {
+            // 拖动聊天框
             if (this.isDraggingChat) {
                 chatContainer.style.left = `${e.clientX - this.chatDragOffset.x}px`;
                 chatContainer.style.top = `${e.clientY - this.chatDragOffset.y}px`;
-                // 注意: 拖动聊天框时不需要修改模型位置
+            }
+
+            // 拖动对话历史面板
+            if (this.isDraggingHistory) {
+                const historyPanel = document.getElementById('chat-history-panel');
+                if (historyPanel) {
+                    historyPanel.style.left = `${e.clientX - this.historyDragOffset.x}px`;
+                    historyPanel.style.top = `${e.clientY - this.historyDragOffset.y}px`;
+                    // 移除 bottom/right 定位，改用 left/top 绝对定位
+                    historyPanel.style.bottom = 'auto';
+                    historyPanel.style.right = 'auto';
+                }
             }
         });
 
@@ -201,6 +215,42 @@ class ModelInteractionController {
             }
         });
 
+        // ========== 对话历史面板拖动功能 ==========
+        const historyPanel = document.getElementById('chat-history-panel');
+
+        if (historyPanel) {
+            // 鼠标按下时开始拖动历史面板
+            historyPanel.addEventListener('mousedown', (e) => {
+                // 仅当点击面板头部区域时触发拖动
+                if (e.target.closest('.chat-header')) {
+                    this.isDraggingHistory = true;
+                    const rect = historyPanel.getBoundingClientRect();
+                    this.historyDragOffset.x = e.clientX - rect.left;
+                    this.historyDragOffset.y = e.clientY - rect.top;
+                    e.preventDefault();
+                    ipcRenderer.send('set-ignore-mouse-events', {
+                        ignore: false
+                    });
+                }
+            });
+
+            // 鼠标释放时停止拖动历史面板
+            const stopHistoryDrag = () => {
+                if (this.isDraggingHistory) {
+                    this.isDraggingHistory = false;
+                    setTimeout(() => {
+                        if (!this.model.containsPoint(this.app.renderer.plugins.interaction.mouse.global)) {
+                            ipcRenderer.send('set-ignore-mouse-events', {
+                                ignore: true,
+                                options: { forward: true }
+                            });
+                        }
+                    }, 100);
+                }
+            };
+
+            document.addEventListener('mouseup', stopHistoryDrag);
+        }
 
 // 拖动结束时，再次检查穿透状态
 // window.addEventListener('mouseup', () => {
