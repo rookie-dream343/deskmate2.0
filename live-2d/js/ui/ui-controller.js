@@ -24,8 +24,14 @@ class UIController {
 
     // 设置鼠标穿透
     setupMouseIgnore() {
-        const updateMouseIgnore = () => {
+        const updateMouseIgnore = (e) => {
             if (!global.currentModel) return;
+
+            // 检查鼠标是否在任何交互元素上
+            const isOverInteractive = this.isMouseOverInteractiveElement(e.clientX, e.clientY);
+
+            // 如果在交互元素上，不要设置忽略
+            if (isOverInteractive) return;
 
             const shouldIgnore = !global.currentModel.containsPoint(
                 global.pixiApp.renderer.plugins.interaction.mouse.global
@@ -37,6 +43,33 @@ class UIController {
         };
 
         document.addEventListener('mousemove', updateMouseIgnore);
+    }
+
+    // 检查鼠标是否在任何交互元素上
+    isMouseOverInteractiveElement(mouseX, mouseY) {
+        const elements = [
+            { id: 'text-chat-container', checkHidden: false },
+            { id: 'chat-history-panel', checkHidden: true },
+            { id: 'chat-history-toggle', checkHidden: false }
+        ];
+
+        for (const elem of elements) {
+            const el = document.getElementById(elem.id);
+            if (!el) continue;
+            // 对于需要检查隐藏状态的元素
+            if (elem.checkHidden && el.style.display === 'none') continue;
+
+            const rect = el.getBoundingClientRect();
+            if (
+                mouseX >= rect.left &&
+                mouseX <= rect.right &&
+                mouseY >= rect.top &&
+                mouseY <= rect.bottom
+            ) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // 设置聊天框事件

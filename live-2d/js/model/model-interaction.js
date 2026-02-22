@@ -53,35 +53,68 @@ class ModelInteractionController {
                 point.y <= this.interactionY + this.interactionHeight
             );
 
-            // // 检查是否在聊天框内
-            const chatContainer = document.getElementById('text-chat-container');
-            if (!chatContainer) return isOverModel; // 如果聊天框不存在，仅检查模型
-
-            // 获取PIXI应用的view(DOM canvas元素)
+            // 检查是否在交互区域内（聊天框、对话历史面板等）
             const pixiView = this.app.renderer.view;
-    
-            // 计算canvas在页面中的位置
             const canvasRect = pixiView.getBoundingClientRect();
-    
-            // 获取聊天框的DOM位置
-            const chatRect = chatContainer.getBoundingClientRect();
-    
-            // 将DOM坐标转换为PIXI坐标
-            const chatLeftInPixi = (chatRect.left - canvasRect.left) * (pixiView.width / canvasRect.width);
-            const chatRightInPixi = (chatRect.right - canvasRect.left) * (pixiView.width / canvasRect.width);
-            const chatTopInPixi = (chatRect.top - canvasRect.top) * (pixiView.height / canvasRect.height);
-            const chatBottomInPixi = (chatRect.bottom - canvasRect.top) * (pixiView.height / canvasRect.height);
 
-            // const chatRect = chatContainer.getBoundingClientRect();
-            const isOverChat = (
-                point.x >= chatLeftInPixi &&
-                point.x <= chatRightInPixi &&
-                point.y >= chatTopInPixi &&
-                point.y <= chatBottomInPixi
-            );
+            // 检查聊天框
+            const chatContainer = document.getElementById('text-chat-container');
+            let isOverInteractiveArea = false;
 
-            
-            return isOverModel || isOverChat;
+            if (chatContainer) {
+                const chatRect = chatContainer.getBoundingClientRect();
+                const chatLeftInPixi = (chatRect.left - canvasRect.left) * (pixiView.width / canvasRect.width);
+                const chatRightInPixi = (chatRect.right - canvasRect.left) * (pixiView.width / canvasRect.width);
+                const chatTopInPixi = (chatRect.top - canvasRect.top) * (pixiView.height / canvasRect.height);
+                const chatBottomInPixi = (chatRect.bottom - canvasRect.top) * (pixiView.height / canvasRect.height);
+
+                isOverInteractiveArea = (
+                    point.x >= chatLeftInPixi &&
+                    point.x <= chatRightInPixi &&
+                    point.y >= chatTopInPixi &&
+                    point.y <= chatBottomInPixi
+                );
+            }
+
+            // 检查对话历史面板
+            if (!isOverInteractiveArea) {
+                const historyPanel = document.getElementById('chat-history-panel');
+                if (historyPanel && historyPanel.style.display !== 'none') {
+                    const panelRect = historyPanel.getBoundingClientRect();
+                    const panelLeftInPixi = (panelRect.left - canvasRect.left) * (pixiView.width / canvasRect.width);
+                    const panelRightInPixi = (panelRect.right - canvasRect.left) * (pixiView.width / canvasRect.width);
+                    const panelTopInPixi = (panelRect.top - canvasRect.top) * (pixiView.height / canvasRect.height);
+                    const panelBottomInPixi = (panelRect.bottom - canvasRect.top) * (pixiView.height / canvasRect.height);
+
+                    isOverInteractiveArea = (
+                        point.x >= panelLeftInPixi &&
+                        point.x <= panelRightInPixi &&
+                        point.y >= panelTopInPixi &&
+                        point.y <= panelBottomInPixi
+                    );
+                }
+            }
+
+            // 检查对话历史按钮
+            if (!isOverInteractiveArea) {
+                const historyBtn = document.getElementById('chat-history-toggle');
+                if (historyBtn) {
+                    const btnRect = historyBtn.getBoundingClientRect();
+                    const btnLeftInPixi = (btnRect.left - canvasRect.left) * (pixiView.width / canvasRect.width);
+                    const btnRightInPixi = (btnRect.right - canvasRect.left) * (pixiView.width / canvasRect.width);
+                    const btnTopInPixi = (btnRect.top - canvasRect.top) * (pixiView.height / canvasRect.height);
+                    const btnBottomInPixi = (btnRect.bottom - canvasRect.top) * (pixiView.height / canvasRect.height);
+
+                    isOverInteractiveArea = (
+                        point.x >= btnLeftInPixi &&
+                        point.x <= btnRightInPixi &&
+                        point.y >= btnTopInPixi &&
+                        point.y <= btnBottomInPixi
+                    );
+                }
+            }
+
+            return isOverModel || isOverInteractiveArea;
         };
         
 
