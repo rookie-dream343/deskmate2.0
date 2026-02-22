@@ -13,7 +13,15 @@
       "Bash(\"D:\\\\conda\\\\envs\\\\my-neuro\\\\python.exe\":*)",
       "Bash(git push:*)",
       "Bash(git revert:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" status)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" diff --stat)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" add:*)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" commit -m \"$\\(cat <<''EOF''\nFix conversation history panel with simplified implementation\n\n- Rewrote conversation history using simple HTML/JS approach\n- Removed complex module dependencies, use global window functions\n- Added mouseenter/mouseleave events for panel and toggle button\n- Fixed llm-handler to call window.addAIMessage directly\n- Panel toggles correctly with the 💬 button\n- Messages display with timestamps and color-coded by sender\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" push origin master)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" log --oneline -5)",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" commit -m \"$\\(cat <<''EOF''\nFix mouse event handling for conversation history panel\n\n- Update containsPoint in model-interaction.js to include history panel and button\n- Modify setupMouseIgnore to check interactive elements before setting ignore state\n- Prevents mouse events from being blocked on history panel and toggle button\n- Fixes click interaction issues with conversation history feature\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"D:\\\\deskmate\\\\deskmate\\\\my-neuro-main\" commit -m \"$\\(cat <<''EOF''\nSavepoint: Before removing subtitle display\n\nCurrent state:\n- Conversation history panel with toggle button is working\n- Mouse event handling fixed for interactive elements\n- Subtitle \\(逐字浮现\\) is still active\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
