@@ -142,26 +142,33 @@ class TTSRequestHandler {
                 }
                 return await response.blob();
             } else {
-                // 本地模式或统一网关模式
+                // 本地GPT-SoVITS模式
                 const headers = { 'Content-Type': 'application/json' };
 
-                // 如果使用统一网关，添加 X-API-Key
-                if (this.useGateway && this.apiKey) {
-                    headers['X-API-Key'] = this.apiKey;
-                }
+                // GPT-SoVITS API 需要的参数
+                const requestBody = {
+                    refer_wav_path: "",  // 使用默认参考音频
+                    prompt_text: "",     // 使用默认参考文本
+                    prompt_language: "",
+                    text: finalTextForTTS,
+                    text_language: this.language
+                };
+
+                console.log('TTS请求:', JSON.stringify(requestBody, null, 2));
 
                 const response = await fetch(this.ttsUrl, {
                     method: 'POST',
                     headers: headers,
-                    body: JSON.stringify({
-                        text: finalTextForTTS,
-                        text_language: this.language
-                    }),
+                    body: JSON.stringify(requestBody),
                     signal: controller.signal
                 });
 
+                console.log('TTS响应状态:', response.status);
+
                 if (!response.ok) {
-                    await this.handleTTSError(response, this.useGateway ? '云端肥牛网关TTS' : '本地TTS');
+                    const errorText = await response.text();
+                    console.error('TTS错误响应:', errorText);
+                    await this.handleTTSError(response, '本地GPT-SoVITS TTS');
                 }
                 return await response.blob();
             }
