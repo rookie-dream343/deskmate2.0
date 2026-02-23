@@ -382,14 +382,18 @@ class ModelInteractionController {
         document.addEventListener('drop', (e) => {
             this.showDragHighlight(false);
 
-            // 检查是否拖拽到模型上
-            const point = global.pixiApp.renderer.plugins.interaction.mouse.global;
-            const isOnModel = this.model.containsPoint(point);
+            console.log('📁 drop 事件触发');
+            console.log('📁 e.dataTransfer:', !!e.dataTransfer);
+            console.log('📁 files:', e.dataTransfer?.files);
 
-            if (!isOnModel) return;
+            const files = e.dataTransfer?.files;
+            if (!files || files.length === 0) {
+                console.log('📁 没有文件');
+                return;
+            }
 
-            const files = e.dataTransfer.files;
-            if (files.length === 0) return;
+            console.log('📁 文件数量:', files.length);
+            console.log('📁 第一个文件:', files[0].name, files[0].type);
 
             this.handleDroppedFiles(files);
         });
