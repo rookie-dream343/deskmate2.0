@@ -14,346 +14,342 @@
    <string>AI桌宠控制中心</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* 主窗口背景 - 浅色渐变 */
+   <string notr="true">/* === Nintendo Pixel Style === */
+
 QMainWindow {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(250, 249, 245, 255), stop:0.5 rgba(245, 243, 235, 255), stop:1 rgba(240, 238, 230, 255));
-border-radius: 25px;
+	background-color: #F5F5EE;
 }
 
-/* 中央部件 - 浅色渐变 */
 QWidget#centralwidget {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(248, 247, 242, 255), stop:0.3 rgba(242, 240, 232, 255), stop:0.7 rgba(245, 243, 235, 255), stop:1 rgba(250, 248, 240, 255));
-border-radius: 25px;
+	background-color: #F5F5EE;
 }
 
-/* 侧边栏样式 - 浅灰渐变 */
 QFrame#sidebar {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(235, 233, 225, 200), stop:0.5 rgba(230, 228, 220, 200), stop:1 rgba(225, 223, 215, 200));
-border: 1px solid rgba(200, 195, 185, 150);
-	border-radius: 20px;
-
+	background-color: #3C5A99;
+	border: 3px solid #2A4073;
+	border-radius: 4px;
 }
 
-
-
-/* 主内容区域 - 浅色毛玻璃效果 */
 QFrame#contentArea {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(240, 238, 230, 200), stop:0.5 rgba(235, 233, 225, 200), stop:1 rgba(230, 228, 220, 200));
-border: 1px solid rgba(200, 195, 185, 180);
-	border-radius: 20px;
-
+	background-color: #FFFFFF;
+	border: 3px solid #CCCCCC;
+	border-radius: 4px;
 }
 
-/* 堆叠控件背景 */
 QStackedWidget {
 	background-color: transparent;
 }
 
-/* 页面背景 */
 QWidget#page, QWidget#page_2, QWidget#page_3, QWidget#page_4, QWidget#page_5, QWidget#page_6, QWidget#page_terminal, QWidget#page_voice_clone, QWidget#page_tutorial, QWidget#page_tools, QWidget#page_ui_settings, QWidget#page_cloud_config, QWidget#page_prompt_market {
 	background-color: transparent;
 }
 
-/* 标签样式 */
 QLabel {
-	color: rgb(114, 95, 77);
-
-background-color: transparent;
+	color: #2D2D2D;
+	background-color: transparent;
 }
 
-/* 输入框样式 - 浅色毛玻璃效果 */
 QLineEdit {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(248, 247, 242, 255));
-border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 10px;
+	background-color: #FFFFFF;
+	border: 2px solid #AAAAAA;
+	border-radius: 3px;
 	padding: 6px 9px;
-	color: rgb(114, 95, 77);
-
+	color: #2D2D2D;
 }
 
 QLineEdit:focus {
-	border: 2px solid rgb(140, 135, 125);
-background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(215, 213, 205, 255), stop:1 rgba(225, 223, 215, 255));
+	border: 2px solid #3C5A99;
+	background-color: #F0F4FF;
 }
 
-/* 文本编辑框样式 - 浅色毛玻璃效果 */
 QTextEdit {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(248, 247, 242, 255));
-border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 14px;
+	background-color: #FFFFFF;
+	border: 2px solid #AAAAAA;
+	border-radius: 3px;
 	padding: 15px;
-	color: rgb(114, 95, 77);
+	color: #2D2D2D;
 }
 
 QTextEdit:focus {
-	border: 2px solid rgb(140, 135, 125);
-background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(245, 244, 240, 255), stop:1 rgba(248, 247, 242, 255));
+	border: 2px solid #3C5A99;
+	background-color: #F0F4FF;
 }
 
-/* 复选框样式 */
 QCheckBox {
-	color: rgb(114, 95, 77);
+	color: #2D2D2D;
 	spacing: 12px;
 	background-color: transparent;
 }
 
 QCheckBox::indicator {
-	width: 15px;
-	height: 15px;
-	border-radius: 4px;
-border: 2px solid rgb(140, 135, 125);
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(230, 228, 220, 255), stop:1 rgba(240, 238, 230, 255));
+	width: 16px;
+	height: 16px;
+	border-radius: 2px;
+	border: 2px solid #888888;
+	background-color: #FFFFFF;
 }
 
 QCheckBox::indicator:checked {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(120, 115, 105, 255), stop:1 rgba(100, 95, 85, 255));
-border: 2px solid rgb(80, 75, 65);
+	background-color: #E60012;
+	border: 2px solid #B0000E;
 }
 
 QCheckBox::indicator:hover {
-	border: 2px solid rgb(100, 95, 85);
+	border: 2px solid #3C5A99;
 }
 
-/* 按钮样式 - 浅色渐变 */
 QPushButton {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(250, 249, 245, 255), stop:0.5 rgba(248, 247, 242, 255), stop:1 rgba(245, 244, 240, 255));
-color: rgb(114, 95, 77);
-	border: 1px solid rgba(160, 155, 145, 180);
-	border-radius: 8px;
+	background-color: #F0F0E8;
+	color: #2D2D2D;
+	border: 2px solid #BBBBBB;
+	border-radius: 4px;
 	padding: 10px 20px;
 }
 
 QPushButton:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(180, 175, 165, 255), stop:1 rgba(170, 165, 155, 255));
-color: rgb(40, 35, 25);
+	background-color: #E0E0D8;
+	border: 2px solid #888888;
+	color: #111111;
 }
 
 QPushButton:pressed {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(160, 155, 145, 255), stop:1 rgba(150, 145, 135, 255));
+	background-color: #D0D0C8;
+	border: 2px solid #666666;
 }
 
-/* 控制按钮特殊样式 */
+/* sidebar nav buttons */
+QFrame#sidebar QPushButton {
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	padding: 10px 15px;
+	text-align: left;
+}
+
+QFrame#sidebar QPushButton:hover {
+	background-color: #FFD700;
+	color: #2D2D2D;
+	border: 2px solid #E6C200;
+}
+
+QFrame#sidebar QPushButton:pressed {
+	background-color: #E6C200;
+	color: #2D2D2D;
+}
+
 #pushButton_toggle_live2d[state="start"],#pushButton_start_terminal,#pushButton_start_asr,#pushButton_start_bert,#pushButton_start_rag,#pushButton_start_minecraft_terminal {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(144, 238, 144, 255), stop:1 rgba(152, 251, 152, 255));
-color: rgb(34, 139, 34);
+	background-color: #43B047;
+	color: #FFFFFF;
+	border: 2px solid #2E8B32;
+}
+
+#pushButton_toggle_live2d[state="start"]:hover,#pushButton_start_terminal:hover,#pushButton_start_asr:hover,#pushButton_start_bert:hover,#pushButton_start_rag:hover,#pushButton_start_minecraft_terminal:hover {
+	background-color: #3A9E3E;
 }
 
 #pushButton_toggle_live2d[state="stop"],#pushButton_stop_terminal,#pushButton_stop_asr,#pushButton_stop_bert,#pushButton_stop_rag {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 182, 193, 255), stop:1 rgba(255, 160, 122, 255));
-color: rgb(139, 69, 19);
+	background-color: #E04040;
+	color: #FFFFFF;
+	border: 2px solid #B83030;
 }
 
-/* 文件上传按钮特殊样式 */
+#pushButton_toggle_live2d[state="stop"]:hover,#pushButton_stop_terminal:hover,#pushButton_stop_asr:hover,#pushButton_stop_bert:hover,#pushButton_stop_rag:hover {
+	background-color: #CC3636;
+}
+
 #pushButton_select_model,#pushButton_select_audio {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(230, 245, 255, 255), stop:0.3 rgba(225, 240, 250, 255), stop:0.7 rgba(220, 235, 245, 255), stop:1 rgba(215, 230, 240, 255));
-border: 2px dashed rgba(100, 150, 200, 180);
-	border-radius: 15px;
-	color: rgb(70, 100, 130);
+	background-color: #E8F4FD;
+	border: 2px dashed #5B9BD5;
+	border-radius: 4px;
+	color: #3C5A99;
 	text-align: center;
 }
 
 #pushButton_select_model:hover,#pushButton_select_audio:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(200, 230, 255, 255), stop:0.5 rgba(190, 220, 250, 255), stop:1 rgba(180, 210, 245, 255));
-border: 2px dashed rgba(80, 130, 180, 220);
-	color: rgb(50, 80, 110);
+	background-color: #D0E8F8;
+	border: 2px dashed #3C5A99;
+	color: #2A4073;
 }
 
 #pushButton_select_model:pressed,#pushButton_select_audio:pressed {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 200, 230, 255), stop:1 rgba(160, 190, 220, 255));
+	background-color: #B8DCF0;
 }
 
-/* 动作按钮特殊样式 */
 #start_singing_btn,#stop_singing_btn {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(173, 216, 230, 255), stop:1 rgba(135, 206, 250, 255));
-color: rgb(25, 25, 112);
+	background-color: #5B9BD5;
+	color: #FFFFFF;
+	border: 2px solid #4178B0;
 	padding: 12px 20px;
 	margin: 5px;
 }
 
-#start_singing_btn,#stop_singing_btn:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(135, 206, 250, 255), stop:1 rgba(100, 149, 237, 255));
-color: rgb(0, 0, 139);
+#start_singing_btn:hover,#stop_singing_btn:hover {
+	background-color: #4A8BC4;
 }
 
-/* 保存按钮特殊样式 */
 QPushButton#saveConfigButton {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(200, 195, 185, 255), stop:0.5 rgba(190, 185, 175, 255), stop:1 rgba(210, 205, 195, 255));
-color: rgb(70, 65, 55);
-
+	background-color: #4A6FA5;
+	color: #FFFFFF;
+	border: 2px solid #3A5A88;
+	border-radius: 4px;
 }
 
 QPushButton#saveConfigButton:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 165, 155, 255), stop:1 rgba(160, 155, 145, 255));
-color: rgb(40, 35, 25);
+	background-color: #3D5F90;
 }
 
-/* 教程按钮特殊样式 */
 QPushButton#pushButton_tutorial {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 248, 220, 255), stop:1 rgba(255, 235, 205, 255));
-color: rgb(139, 69, 19);
-	border: 2px solid rgba(205, 133, 63, 150);
-	border-radius: 12px;
+	background-color: #FF8C00;
+	color: #FFFFFF;
+	border: 2px solid #CC7000;
+	border-radius: 4px;
 }
 
 QPushButton#pushButton_tutorial:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 228, 181, 255), stop:1 rgba(255, 218, 185, 255));
-color: rgb(101, 67, 33);
-	border: 2px solid rgba(184, 134, 11, 200);
+	background-color: #E67E00;
+	border: 2px solid #B36200;
 }
 
-/* QComboBox 下拉框样式 */
 QComboBox {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(248, 247, 242, 255));
-border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 14px;
+	background-color: #FFFFFF;
+	border: 2px solid #AAAAAA;
+	border-radius: 3px;
 	padding: 6px 9px;
-	color: rgb(114, 95, 77);
-
+	color: #2D2D2D;
 }
 
 QComboBox:focus {
-	border: 2px solid rgb(140, 135, 125);
-background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(215, 213, 205, 255), stop:1 rgba(225, 223, 215, 255));
+	border: 2px solid #3C5A99;
 }
 
 QComboBox::drop-down {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 30px;
-	border-left: 1px solid rgba(180, 175, 165, 200);
-border-top-right-radius: 14px;
-	border-bottom-right-radius: 14px;
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(240, 238, 230, 255), stop:1 rgba(235, 233, 225, 255));
+	border-left: 2px solid #AAAAAA;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background-color: #F0F0E8;
 }
 
 QComboBox::down-arrow {
 	width: 12px;
 	height: 12px;
 	image: none;
-	border: 2px solid rgb(114, 95, 77);
+	border: 2px solid #2D2D2D;
 	border-top: none;
-border-right: none;
+	border-right: none;
 	transform: rotate(-45deg);
 	margin: 5px;
 }
 
 QComboBox QAbstractItemView {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(248, 247, 242, 255));
-border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 8px;
-	selection-background-color: rgba(190, 185, 175, 255);
-	color: rgb(114, 95, 77);
+	background-color: #FFFFFF;
+	border: 2px solid #AAAAAA;
+	border-radius: 3px;
+	selection-background-color: #FFD700;
+	selection-color: #2D2D2D;
+	color: #2D2D2D;
 	padding: 5px;
 }
 
-/* 标签页样式 */
 QTabWidget::pane {
-	border: 1px solid rgba(180, 175, 165, 200);
-border-radius: 12px;
+	border: 2px solid #CCCCCC;
+	border-radius: 3px;
 	background: transparent;
 	margin-top: 5px;
 }
 
 QTabBar::tab {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(245, 244, 240, 255));
-color: rgb(114, 95, 77);
-	border: 1px solid rgba(180, 175, 165, 200);
+	background-color: #F0F0E8;
+	color: #2D2D2D;
+	border: 2px solid #CCCCCC;
 	border-bottom: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	padding: 10px 30px;
-	margin-right: 5px;
-
+	margin-right: 3px;
 }
 
 QTabBar::tab:selected {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(240, 238, 230, 255), stop:1 rgba(235, 233, 225, 255));
-color: rgb(70, 65, 55);
-	border-bottom: 1px solid rgba(240, 238, 230, 255);
-	border: 2px solid rgba(140, 135, 125, 200);
-	border-bottom: none;
+	background-color: #FFFFFF;
+	color: #E60012;
+	border: 2px solid #3C5A99;
+	border-bottom: 2px solid #FFFFFF;
+	font-weight: bold;
 }
 
 QTabBar::tab:hover {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 228, 220, 255), stop:1 rgba(225, 223, 215, 255));
-border: 2px solid rgba(160, 155, 145, 180);
+	background-color: #FFD700;
+	color: #2D2D2D;
+	border: 2px solid #E6C200;
 	border-bottom: none;
 }
 
-/* 滚动条样式 */
 QScrollBar:vertical {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(225, 223, 215, 255), stop:1 rgba(235, 233, 225, 255));
-width: 10px;
-	border-radius: 5px;
+	background-color: #EEEEEE;
+	width: 10px;
+	border-radius: 2px;
 }
 
 QScrollBar::handle:vertical {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(160, 155, 145, 255), stop:1 rgba(140, 135, 125, 255));
-border-radius: 5px;
+	background-color: #C0C0C0;
+	border-radius: 2px;
 	min-height: 20px;
 }
 
 QScrollBar::handle:vertical:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(120, 115, 105, 255), stop:1 rgba(100, 95, 85, 255));
+	background-color: #A0A0A0;
 }
 
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
 	height: 0px;
 }
 
-/* 标题样式 */
 QLabel#sectionTitle {
-	color: rgb(114, 95, 77);
-
+	color: #3C5A99;
 	background-color: transparent;
+	font-weight: bold;
 }
 
-
-
-/* 菜单栏样式 */
 QMenuBar {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(235, 233, 225, 255), stop:1 rgba(230, 228, 220, 255));
-color: rgb(70, 65, 55);
-	border-radius: 25px 25px 0px 0px;
+	background-color: #3C5A99;
+	color: #FFFFFF;
 }
 
 QMenuBar::item:selected {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(200, 195, 185, 255), stop:1 rgba(180, 175, 165, 255));
-color: rgb(40, 35, 25);
+	background-color: #FFD700;
+	color: #2D2D2D;
 }
 
-/* 状态栏样式 */
 QStatusBar {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(235, 233, 225, 255), stop:1 rgba(230, 228, 220, 255));
-color: rgb(70, 65, 55);
-	border-radius: 0px 0px 25px 25px;
+	background-color: #3C5A99;
+	color: #FFFFFF;
 }
 
-/* 控制面板样式 */
 QFrame#control_panel_frame {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(240, 238, 230, 255), stop:1 rgba(235, 233, 225, 255));
-border: 1px solid rgba(200, 195, 185, 180);
-	border-radius: 15px;
+	background-color: #F8F8F2;
+	border: 2px solid #CCCCCC;
+	border-radius: 4px;
 }
 
-/* 终端日志标签页特殊样式 */
 QTabWidget#tabWidget_logs::pane {
-	border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 12px;
+	border: 2px solid #CCCCCC;
+	border-radius: 3px;
 	background: transparent;
 	margin-top: 5px;
 }
 
 QTabWidget#tabWidget_logs QTabBar::tab {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(245, 244, 240, 255));
-color: rgb(114, 95, 77);
-	border: 1px solid rgba(180, 175, 165, 200);
+	background-color: #F0F0E8;
+	color: #2D2D2D;
+	border: 2px solid #CCCCCC;
 	border-bottom: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	padding: 8px 15px;
-margin-right: 2px;
-
+	margin-right: 2px;
 }
 
 QTabWidget#tabWidget_logs QTabBar {
@@ -361,160 +357,145 @@ QTabWidget#tabWidget_logs QTabBar {
 }
 
 QTabWidget#tabWidget_logs QTabBar::tab:selected {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(240, 238, 230, 255), stop:1 rgba(235, 233, 225, 255));
-color: rgb(70, 65, 55);
-	border-bottom: 1px solid rgba(240, 238, 230, 255);
-	border: 2px solid rgba(140, 135, 125, 200);
-	border-bottom: none;
+	background-color: #FFFFFF;
+	color: #E60012;
+	border: 2px solid #3C5A99;
+	border-bottom: 2px solid #FFFFFF;
+	font-weight: bold;
 }
 
-QTabBar::tab:hover {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 228, 220, 255), stop:1 rgba(225, 223, 215, 255));
-border: 2px solid rgba(160, 155, 145, 180);
-	border-bottom: none;
-}
-
-/* 工具屋页面样式 */
 QWidget#page_tools {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(252, 251, 247, 255), stop:1 rgba(247, 245, 237, 255));
-	border-radius: 15px;
+	background-color: transparent;
+	border-radius: 4px;
 }
 
-/* 工具屋标题样式 */
 QLabel#label_tools_title {
-	color: rgb(85, 70, 55);
+	color: #FFFFFF;
 	font-size: 18px;
 	font-weight: bold;
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(240, 200, 160, 120), stop:1 rgba(200, 180, 140, 120));
-	border: 2px solid rgba(180, 160, 120, 150);
-	border-radius: 12px;
+	background-color: #3C5A99;
+	border: 2px solid #2A4073;
+	border-radius: 4px;
 	padding: 12px;
 	margin: 10px 20px;
 }
 
-/* 工具屋滚动区域样式 */
 QScrollArea#scrollArea_tools {
 	background: transparent;
 	border: none;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 
-/* 工具列表样式 */
 QListWidget#listWidget_tools {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 254, 250, 255), stop:1 rgba(250, 248, 240, 255));
-	border: 2px solid rgba(200, 185, 160, 180);
-	border-radius: 12px;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 4px;
 	padding: 8px;
 	font-size: 18px;
-	selection-background-color: rgba(220, 200, 170, 180);
+	selection-background-color: #FFD700;
 }
 
 QListWidget#listWidget_tools::item {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(248, 246, 240, 255), stop:1 rgba(245, 243, 235, 255));
-	border: 1px solid rgba(210, 195, 170, 120);
-	border-radius: 8px;
+	background-color: #F8F8F2;
+	border: 2px solid #DDDDDD;
+	border-radius: 3px;
 	padding: 12px 16px;
 	margin: 4px 2px;
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_tools::item:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(240, 220, 180, 200), stop:1 rgba(235, 215, 175, 200));
-	border: 2px solid rgba(200, 170, 130, 180);
-	color: rgb(50, 40, 25);
-	transform: translateY(-1px);
+	background-color: #FFF8DC;
+	border: 2px solid #FFD700;
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_tools::item:selected {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(230, 210, 170, 220), stop:1 rgba(225, 205, 165, 220));
-	border: 2px solid rgba(180, 150, 110, 200);
-	color: rgb(40, 30, 15);
+	background-color: #FFD700;
+	border: 2px solid #E6C200;
+	color: #2D2D2D;
 }
 
-/* 状态指示样式 */
 QListWidget#listWidget_tools::item[text^="● "] {
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_tools::item[text^="● "]:first-letter {
-	color: rgba(70, 150, 70, 255);
+	color: #43B047;
 }
 
 QListWidget#listWidget_tools::item[text^="○ "] {
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_tools::item[text^="○ "]:first-letter {
-	color: rgba(120, 120, 120, 255);
+	color: #AAAAAA;
 }
 
-/* MCP工具列表样式 */
 QListWidget#listWidget_mcp_tools {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 254, 250, 255), stop:1 rgba(250, 248, 240, 255));
-	border: 2px solid rgba(200, 185, 160, 180);
-	border-radius: 12px;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 4px;
 	padding: 8px;
 	font-size: 18px;
-	selection-background-color: rgba(220, 200, 170, 180);
+	selection-background-color: #FFD700;
 }
 
 QListWidget#listWidget_mcp_tools::item {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(248, 246, 240, 255), stop:1 rgba(245, 243, 235, 255));
-	border: 1px solid rgba(210, 195, 170, 120);
-	border-radius: 8px;
+	background-color: #F8F8F2;
+	border: 2px solid #DDDDDD;
+	border-radius: 3px;
 	padding: 12px 16px;
 	margin: 4px 2px;
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_mcp_tools::item:hover {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(240, 220, 180, 200), stop:1 rgba(235, 215, 175, 200));
-	border: 2px solid rgba(200, 170, 130, 180);
-	color: rgb(50, 40, 25);
-	transform: translateY(-1px);
+	background-color: #FFF8DC;
+	border: 2px solid #FFD700;
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_mcp_tools::item:selected {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(230, 210, 170, 220), stop:1 rgba(225, 205, 165, 220));
-	border: 2px solid rgba(180, 150, 110, 200);
-	color: rgb(40, 30, 15);
+	background-color: #FFD700;
+	border: 2px solid #E6C200;
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_mcp_tools::item[text^="● "] {
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_mcp_tools::item[text^="● "]:first-letter {
-	color: rgba(70, 150, 70, 255);
+	color: #43B047;
 }
 
 QListWidget#listWidget_mcp_tools::item[text^="○ "] {
-	color: rgb(70, 60, 45);
+	color: #2D2D2D;
 }
 
 QListWidget#listWidget_mcp_tools::item[text^="○ "]:first-letter {
-	color: rgba(120, 120, 120, 255);
+	color: #AAAAAA;
 }
 
-/* 工具屋标签页样式 */
 QTabWidget#tabWidget_tools {
 	background: transparent;
 }
 
 QTabWidget#tabWidget_tools::pane {
-	border: 1px solid rgba(180, 175, 165, 200);
-	border-radius: 12px;
+	border: 2px solid #CCCCCC;
+	border-radius: 3px;
 	background: transparent;
 	margin-top: 5px;
 }
 
 QTabWidget#tabWidget_tools QTabBar::tab {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(250, 249, 245, 255), stop:1 rgba(245, 244, 240, 255));
-	color: rgb(114, 95, 77);
-	border: 1px solid rgba(180, 175, 165, 200);
+	background-color: #F0F0E8;
+	color: #2D2D2D;
+	border: 2px solid #CCCCCC;
 	border-bottom: none;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	padding: 12px 35px;
 	margin: 0px 1px;
 	font-family: 微软雅黑;
@@ -523,16 +504,17 @@ QTabWidget#tabWidget_tools QTabBar::tab {
 }
 
 QTabWidget#tabWidget_tools QTabBar::tab:selected {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(240, 238, 230, 255), stop:1 rgba(235, 233, 225, 255));
-	color: rgb(70, 65, 55);
-	border-bottom: 1px solid rgba(240, 238, 230, 255);
-	border: 2px solid rgba(140, 135, 125, 200);
-	border-bottom: none;
+	background-color: #FFFFFF;
+	color: #E60012;
+	border: 2px solid #3C5A99;
+	border-bottom: 2px solid #FFFFFF;
+	font-weight: bold;
 }
 
 QTabWidget#tabWidget_tools QTabBar::tab:hover {
-	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 228, 220, 255), stop:1 rgba(225, 223, 215, 255));
-	border: 2px solid rgba(160, 155, 145, 180);
+	background-color: #FFD700;
+	color: #2D2D2D;
+	border: 2px solid #E6C200;
 	border-bottom: none;
 }
 
@@ -952,6 +934,12 @@ QTabWidget#tabWidget_tools QTabBar {
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_prompt_market">
+               <property name="maximumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <family>微软雅黑</family>
@@ -991,7 +979,7 @@ QTabWidget#tabWidget_tools QTabBar {
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_tutorial">
-               <property name="minimumSize">
+               <property name="maximumSize">
                 <size>
                  <width>0</width>
                  <height>0</height>
@@ -1731,10 +1719,10 @@ QTabWidget#tabWidget_tools QTabBar {
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background-color: #FF8C00;
+    color: #FFFFFF;
+    border: 2px solid #CC7000;
+    border-radius: 4px;
     padding: 5px 15px;
 }
 QPushButton:hover {
@@ -2093,7 +2081,7 @@ QPushButton:pressed {
                   <bool>true</bool>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #666666; padding: 5px; background-color: #f0f0f0; border-radius: 5px;</string>
+                  <string notr="true">color: #666666; padding: 5px; background-color: #F0F0E8; border: 2px solid #DDDDDD; border-radius: 3px;</string>
                  </property>
                 </widget>
                </item>
@@ -2405,7 +2393,7 @@ QPushButton:pressed {
                   <bool>true</bool>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #666666; padding: 5px; background-color: #f0f0f0; border-radius: 5px;</string>
+                  <string notr="true">color: #666666; padding: 5px; background-color: #F0F0E8; border: 2px solid #DDDDDD; border-radius: 3px;</string>
                  </property>
                 </widget>
                </item>
@@ -2590,7 +2578,7 @@ QPushButton:pressed {
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color: rgb(0, 120, 212);</string>
+                    <string notr="true">color: #3C5A99;</string>
                    </property>
                    <property name="text">
                     <string>--</string>
@@ -4000,9 +3988,12 @@ font-size: 20px;</string>
              </property>
              <property name="styleSheet">
               <string notr="true">QTextBrowser {
-
 	line-height: 2.2;
 	padding: 20px;
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 3px;
+	color: #2D2D2D;
 }
 QTextBrowser img {
 	max-width: 100%;
@@ -4083,11 +4074,16 @@ QTextBrowser img {
                    margin-left: 5px;
                    margin-right: 5px;
                    padding-top: 15px;
+                   border: 2px solid #CCCCCC;
+                   border-radius: 4px;
+                   background-color: #FFFFFF;
                }
                QGroupBox::title {
                    subcontrol-origin: margin;
                    left: 10px;
                    padding: 0 5px 0 5px;
+                   color: #3C5A99;
+                   font-weight: bold;
                }
               </string>
              </property>
@@ -4392,13 +4388,14 @@ QTextBrowser img {
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QPushButton {
-    background-color: #2c3e50;
-    color: white;
-    border-radius: 8px;
+    background-color: #3C5A99;
+    color: #FFFFFF;
+    border: 2px solid #2A4073;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #34495e;
+    background-color: #2A4073;
 }
 QPushButton:pressed {
     background-color: #1a252f;
@@ -4477,16 +4474,17 @@ QPushButton:pressed {
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QPushButton {
-    background-color: #FF9800;
-    color: white;
-    border-radius: 8px;
+    background-color: #FF8C00;
+    color: #FFFFFF;
+    border: 2px solid #CC7000;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #F57C00;
+    background-color: #E67E00;
 }
 QPushButton:pressed {
-    background-color: #E65100;
+    background-color: #CC7000;
 }</string>
                  </property>
                 </widget>
@@ -4820,7 +4818,7 @@ QPushButton:pressed {
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #2196F3; padding: 15px; background-color: #E3F2FD; border-radius: 5px;</string>
+                  <string notr="true">color: #3C5A99; padding: 15px; background-color: #E8F4FD; border: 2px solid #5B9BD5; border-radius: 3px;</string>
                  </property>
                  <property name="text">
                   <string>💡 提示：启动就能用!语音识别、语音合成、智能对话这些功能全在云端跑,你的电脑上不用装任何东西。不管是Windows还是Mac、Linux,只要能上网就行。点击下方的按键前往肥牛官网注册登录后。选择肥牛API密钥，在那即可获取到肥牛的API KEY</string>
@@ -4867,16 +4865,17 @@ QPushButton:pressed {
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QPushButton {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
+    background-color: #43B047;
+    color: #FFFFFF;
+    border: 2px solid #2E8B32;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #45a049;
+    background-color: #3A9E3E;
 }
 QPushButton:pressed {
-    background-color: #3d8b40;
+    background-color: #2E8B32;
 }</string>
                  </property>
                  <property name="text">
@@ -5595,16 +5594,17 @@ QPushButton:pressed {
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
-    background-color: #3498db;
-    color: white;
-    border-radius: 8px;
+    background-color: #3C5A99;
+    color: #FFFFFF;
+    border: 2px solid #2A4073;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #5dade2;
+    background-color: #2A4073;
 }
 QPushButton:pressed {
-    background-color: #2874a6;
+    background-color: #1D3060;
 }</string>
              </property>
             </widget>
@@ -5630,16 +5630,17 @@ QPushButton:pressed {
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
-    background-color: #8e44ad;
-    color: white;
-    border-radius: 8px;
+    background-color: #7B2D8E;
+    color: #FFFFFF;
+    border: 2px solid #5C2268;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #9b59b6;
+    background-color: #6A2679;
 }
 QPushButton:pressed {
-    background-color: #6c3483;
+    background-color: #5C2268;
 }</string>
              </property>
             </widget>
@@ -5712,16 +5713,17 @@ QPushButton:pressed {
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
-    background-color: #3498db;
-    color: white;
-    border-radius: 8px;
+    background-color: #3C5A99;
+    color: #FFFFFF;
+    border: 2px solid #2A4073;
+    border-radius: 4px;
     padding: 8px;
 }
 QPushButton:hover {
-    background-color: #5dade2;
+    background-color: #2A4073;
 }
 QPushButton:pressed {
-    background-color: #2874a6;
+    background-color: #1D3060;
 }</string>
              </property>
             </widget>
@@ -5739,14 +5741,14 @@ QPushButton:pressed {
              </property>
              <property name="styleSheet">
               <string notr="true">QTextEdit {
-    background-color: #fafaf8;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
+    background-color: #FFFFFF;
+    border: 2px solid #CCCCCC;
+    border-radius: 3px;
     padding: 30px;
     line-height: 180%;
 }
 QTextEdit:focus {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid #3C5A99;
 }</string>
              </property>
             </widget>
@@ -5802,29 +5804,27 @@ QTextEdit:focus {
    </property>
    <property name="styleSheet">
     <string notr="true">QMenuBar {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(235, 233, 225, 255), stop:1 rgba(230, 228, 220, 255));
-color: rgb(70, 65, 55);
+	background-color: #3C5A99;
+	color: #FFFFFF;
 	font-size: 18px;
 	font-family: &quot;Microsoft YaHei&quot;, &quot;SimHei&quot;, sans-serif;
 	font-weight: bold;
-	border-radius: 25px 25px 0px 0px;
 }
 
 QMenuBar::item:selected {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(200, 195, 185, 255), stop:1 rgba(180, 175, 165, 255));
-color: rgb(40, 35, 25);
+	background-color: #FFD700;
+	color: #2D2D2D;
 }</string>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="styleSheet">
     <string notr="true">QStatusBar {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(235, 233, 225, 255), stop:1 rgba(230, 228, 220, 255));
-color: rgb(70, 65, 55);
+	background-color: #3C5A99;
+	color: #FFFFFF;
 	font-size: 18px;
 	font-family: &quot;Microsoft YaHei&quot;, &quot;SimHei&quot;, sans-serif;
 	font-weight: bold;
-	border-radius: 0px 0px 25px 25px;
 }</string>
    </property>
   </widget>

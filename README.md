@@ -2,14 +2,6 @@
 
 <div align="center">
 
-<a href="https://github.com/morettt/my-neuro/releases">
-    <img src="https://img.shields.io/github/v/release/morettt/my-neuro" alt="latest version" /></a>
-
-<a href="https://github.com/morettt/my-neuro/graphs/contributors">
-    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/morettt/my-neuro"></a>
-
-<a href="https://deepwiki.com/morettt/my-neuro">
-    <img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki" /></a>
 
 </div>
 
@@ -19,24 +11,14 @@
 
 
 
-## 本项目部署流程请看官网：[点我进官网](http://mynewbot.com/tutorials)
-## [如何提交PR](./commit_PR.md)
 
 
 
 #### Windomate 的目标是打造专属个人的 AI 角色,打造出逼近真人的AI伙伴 - 通过您的数据印记,塑造出心目中理想的 TA 的形象。
 
-#### 此项目受neuro sama启发（原my-neuro项目） 项目可训练声音、性格、替换形象 您的想象力有多丰富，模型就能多贴近您的期望。本项目更像是一个工作台。利用打包好的工具，一步步亲手描绘并实现心中理想的 AI 形象。
-
-#### 如果你想用全部都用本地推理，使用本地的大语言模型（LLM）推理或者微调。不基于第三方的API的话，那可以进入LLM-studio文件夹，里面有本地模型的推理、微调指导。
-
-### 如果想用闭源AI模型，推荐使用 [DMXAPI](https://www.dmxapi.cn)
-### 支持市面上大部分主流AI模型的统一调用。
-
-<img src="./image/dmx1.png" width="300" />
+#### 此项目受neuro sama启发 项目可训练声音、性格、替换形象 您的想象力有多丰富，模型就能多贴近您的期望。
 
 
-### 计划清单
 
 ### 双模型支持
 - [x] 开源模型：支持开源模型微调，本地部署
@@ -49,7 +31,6 @@
 - [x] MCP支持：可使用MCP工具接入
 - [x] 实时打断：支持语音、键盘打断AI说话
 - [ ] 真实情感：模拟真人的情绪变化状态，有自己的情绪状态。
-- [ ] 超吊的人机体验(类似真人交互设计，敬请期待)
 - [x] 动作表情：根据对话内容展示不同的表情与动作
 - [x] 集成视觉能力，支持图像识别，并通过语言意图判断何时启动视觉功能
 - [x] 声音模型（TTS）训练支持，默认使用gpt-sovits开源项目
@@ -58,17 +39,13 @@
 ### 扩展功能
 - [x] 桌面控制：支持语音控制打开软件等操作
 - [x] AI唱歌（功能由： [@jonnytri53](https://github.com/jonnytri53) 资金赞助开发，特此感谢）
-- [ ] 国外直播平台的接入
-- [x] 直播功能：可在哔哩哔哩平台直播
 - [x] AI讲课：选择一个主题，让AI给你讲课。中途可提问。偏门课程可植入资料到数据库让AI理解
 - [x] 替换各类live 2d模型
-- [ ] web网页界面支持（已做好，近期会接入）
 - [x] 打字对话：可键盘打字和AI交流
 - [x] 主动对话：根据上下文主动发起对话。目前版本V1
 - [x] 联网接入，实时搜索最新信息
-- [x] 手机app应用：可在安卓手机上对话的肥牛
 - [x] 播放音效库中的音效，由模型自己决定播放何种音效
-- [x] 游戏陪玩，模型和用户共同游玩配合、双人、解密等游戏。目前实验游戏为：你画我猜、大富翁、galgame、我的世界等游戏（当前接入：我的世界、galgame）
+- [x] 游戏陪玩，模型和用户共同游玩配合、双人、解密等游戏。
 - [x] 长期记忆，让模型记住你的关键信息，你的个性，脾气
 
 ### 模型自己想要的功能（待定考虑）
