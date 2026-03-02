@@ -145,11 +145,8 @@ class TTSRequestHandler {
                 // 本地GPT-SoVITS模式
                 const headers = { 'Content-Type': 'application/json' };
 
-                // GPT-SoVITS API 需要的参数
+                // GPT-SoVITS API - 只发送必要参数，让服务器使用启动时的默认参考音频
                 const requestBody = {
-                    refer_wav_path: "",  // 使用默认参考音频
-                    prompt_text: "",     // 使用默认参考文本
-                    prompt_language: "",
                     text: finalTextForTTS,
                     text_language: this.language
                 };

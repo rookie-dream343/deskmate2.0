@@ -1,8 +1,8 @@
-# MemOS 记忆系统集成肥牛AI - 完整执行计划
+# MemOS 记忆系统集成 Windomate - 完整执行计划
 
 ## 项目背景
 
-### 目标项目：肥牛AI (my-neuro)
+### 目标项目：Windomate (原 my-neuro)
 - **项目路径**：`K:\neruo\my-neuro-main`
 - **项目性质**：基于 Electron + Node.js 的 AI 虚拟角色对话系统
 - **核心功能**：Live2D 虚拟角色 + TTS 语音合成 + ASR 语音识别 + LLM 对话

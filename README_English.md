@@ -1,4 +1,4 @@
-# My-neuro
+# Windomate
 
 <div align="center">
 
@@ -20,9 +20,9 @@
 
 ## For deployment process of this project, please visit the official website: [Click here to visit official website](http://mynewbot.com/tutorials)
 
-#### The goal of my-neuro is to create your own personal AI character, crafting an AI companion that approaches real human behavior - through your data and notes, shaping the ideal image of TA in your mind.
+#### The goal of Windomate is to create your own personal AI character, crafting an AI companion that approaches real human behavior - through your data and notes, shaping the ideal image of TA in your mind.
 
-#### This project is inspired by neuro sama, hence the name my-neuro (a name provided by the community). The project can train voice, personality, and replace appearances. Your imagination is as rich as the model can be close to your expectations. This project is more like a workbench. Using packaged tools, step by step you can personally design and realize your ideal AI image.
+#### This project is inspired by neuro sama (originally my-neuro project). The project can train voice, personality, and replace appearances. Your imagination is as rich as the model can be close to your expectations. This project is more like a workbench. Using packaged tools, step by step you can personally design and realize your ideal AI image.
 
 #### If you want to use fully local inference, using local Large Language Models (LLM) for inference or fine-tuning, not based on third-party APIs, you can enter the LLM-studio folder, which contains guidance for local model inference and fine-tuning.
 
@@ -72,7 +72,7 @@
 
 ## Closing Thoughts
 
-I will incorporate my years of experience and understanding of technology into this project. The name "my neuro" not only rides on the popularity of neuro sama, but more importantly expresses my imagination and expectations for the boundaries of AI.
+I will incorporate my years of experience and understanding of technology into this project. The name "Windomate" (formerly "my-neuro"), but more importantly expresses my imagination and expectations for the boundaries of AI.
 
 I hope for a true AI companion that can understand you, comprehend you, and never find you boring by your side. Sad together when sad, happy together when happy. Bringing characters from film and TV works, novels, and fantasies into reality.
 

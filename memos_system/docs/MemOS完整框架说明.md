@@ -1,4 +1,4 @@
-# MemOS 完整框架使用说明
+# MemOS 完整框架使用说明 (Windomate 项目)
 
 ## 🎯 完整 vs 简化版本对比
 

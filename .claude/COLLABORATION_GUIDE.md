@@ -1,10 +1,10 @@
-# DeskMate 项目协作指南
+# Windomate 项目协作指南
 
 > 本文档定义了与 AI 助手（Claude Code）协作开发此项目时应遵循的规范和原则。
 
 ## 项目概览
 
-**DeskMate** 是一个基于 Live2D 的 AI 桌面宠物，具备语音交互、情绪识别、记忆系统等功能。
+**Windomate** 是一个基于 Live2D 的 AI 桌面宠物，具备语音交互、情绪识别、记忆系统等功能。
 
 ### 核心技术栈
 - **前端**: Electron + Live2D (Cubism SDK)

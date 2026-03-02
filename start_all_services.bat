@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 >nul
-title 启动 DeskMate 所有服务
+title 启动 Windomate 所有服务
 
 echo ========================================
-echo DeskMate 服务启动脚本
+echo Windomate 服务启动脚本
 echo ========================================
 echo.
 
